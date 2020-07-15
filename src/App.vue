@@ -58,7 +58,7 @@
       
       <v-list-item v-if="!guest">
         <v-list-item-avatar>
-          <v-img :src="getImage('/users/'+user.avatar)"></v-img>
+          <v-img src="https://api.adorable.io/avatars/50/abott@adorable.png"></v-img>
         </v-list-item-avatar>
 
         <v-list-item-content>

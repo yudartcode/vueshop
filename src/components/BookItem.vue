@@ -6,10 +6,10 @@
         class="white--text"
         height="200px"
       >
-        <v-card-title 
+        <!-- <v-card-title 
           class="fill-height align-end"
           v-text="book.title"
-        ></v-card-title>
+        ></v-card-title> -->
       </v-img>
 
       <v-card-actions>

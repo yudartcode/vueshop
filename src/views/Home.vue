@@ -1,22 +1,23 @@
 <template>
   <div>
     <v-container class="ma-0 pa-0" grid-list-sm>
-      <div class="text-right">
-        <v-btn small text to="/categories" class="blue--text">
-          All Categories <v-icon>mdi-chevron-right</v-icon>
-        </v-btn>
-      </div> 
+      <div class="row">
+        <v-subheader class="col">Categories</v-subheader>
+        <div class="col text-right">
+          <v-btn small text to="/categories" class="blue--text">
+            All Categories
+            <v-icon>mdi-chevron-right</v-icon>
+          </v-btn>
+        </div>
+      </div>
       <v-layout wrap>
         <v-flex v-for="(category) in categories" :key="`category-`+category.id" xs6>
           <v-card :to="'/category/'+ category.slug">
-            <v-img
-              :src="getImage('/categories/'+category.image)"
-              class="white--text"
-            >
-              <v-card-title 
+            <v-img :src="getImage('/'+category.image)" class="white--text">
+              <!-- <v-card-title 
                 class="fill-height align-end"
                 v-text="category.name"
-              ></v-card-title>
+              ></v-card-title>-->
             </v-img>
           </v-card>
         </v-flex>
@@ -24,11 +25,15 @@
     </v-container>
 
     <v-container class="ma-0 pa-0 mt-2" grid-list-sm>
-      <div class="text-right">
-        <v-btn small text to="/books" class="blue--text">
-          All Books <v-icon>mdi-chevron-right</v-icon>
-        </v-btn>
-      </div> 
+      <div class="row">
+        <v-subheader class="col">Books</v-subheader>
+        <div class="text-right col">
+          <v-btn small text to="/books" class="blue--text">
+            All Books
+            <v-icon>mdi-chevron-right</v-icon>
+          </v-btn>
+        </div>
+      </div>
       <v-layout wrap>
         <v-flex v-for="(book) in books" :key="`book-`+book.id" xs6>
           <book-item :book="book" />
@@ -41,32 +46,35 @@
 <script>
 export default {
   components: {
-    BookItem: () => import(/* webpackChunkName: "book-item" */ '@/components/BookItem.vue')
+    BookItem: () =>
+      import(/* webpackChunkName: "book-item" */ "@/components/BookItem.vue")
   },
   data: () => ({
     categories: [],
     books: []
   }),
-  created(){
-    this.axios.get('/categories/random/2')
-      .then((response) => {
-          let { data } = response.data
-          this.categories = data
+  created() {
+    this.axios
+      .get("/categories/random/2")
+      .then(response => {
+        let { data } = response.data;
+        this.categories = data;
       })
-      .catch((error) => {
-          let { responses } = error
-          console.log(responses)
+      .catch(error => {
+        let { responses } = error;
+        console.log(responses);
+      });
+
+    this.axios
+      .get("/books/top/4")
+      .then(response => {
+        let { data } = response.data;
+        this.books = data;
       })
-    
-    this.axios.get('/books/top/4')
-      .then((response) => {
-          let { data } = response.data
-          this.books = data
-      })
-      .catch((error) => {
-          let { responses } = error
-          console.log(responses)
-      })
+      .catch(error => {
+        let { responses } = error;
+        console.log(responses);
+      });
   }
 };
 </script>

@@ -68,7 +68,7 @@
                 :key="'cart'+index"
                 >
                 <v-list-item-avatar>
-                    <v-img :src="getImage('/books/'+item.cover)"></v-img>
+                    <v-img :src="getImage('/'+item.cover)"></v-img>
                 </v-list-item-avatar>
 
                 <v-list-item-content>

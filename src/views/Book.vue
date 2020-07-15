@@ -2,27 +2,27 @@
   <div>
     <v-card v-if="book.slug">
         <v-img
-            :src="getImage('/books/'+book.cover)"
+            :src="getImage('/'+book.cover)"
             class="white--text"
             height="200px"
         >
+        </v-img>
+
             <v-card-title 
                 class="fill-height align-end"
                 v-text="book.title">
             </v-card-title>
-        </v-img>
-
         <v-card-text>
             <v-simple-table dense>
                 <tbody>
-                <tr>
+                <!-- <tr>
                     <td><v-icon>mdi-account-tie</v-icon> Author</td>
                     <td>{{ book.author}}</td>
                 </tr>
                 <tr>
                     <td><v-icon>mdi-bullhorn</v-icon> Publisher</td>
                     <td>{{ book.publisher}}</td>
-                </tr>
+                </tr> -->
                 <tr>
                     <td><v-icon>mdi-weight</v-icon> Weight</td>
                     <td>{{ book.weight }} kg</td>

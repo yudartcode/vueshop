@@ -2,7 +2,7 @@
   <div>
     <v-card :to="'/category/'+ category.slug" v-if="category.slug">
         <v-img
-            :src="getImage('/categories/'+category.image)"
+            :src="getImage('/'+category.image)"
             class="white--text"
         >
             <v-card-title 

@@ -71,13 +71,13 @@ export default {
             v => !!v || 'Name is required',
             v => (v && v.length <= 255) || 'Name must be less than 255 characters'
             ],
-            email: 'akautzer@example.net',
+            email: '',
             emailRules: [
             v => !!v || 'E-mail is required',
             v => /([a-zA-Z0-9_]{1,})(@)([a-zA-Z0-9_]{2,}).([a-zA-Z0-9_]{2,})+/.test(v) || 'E-mail must be valid'
             ],
             showPassword: false,
-            password: '123456',
+            password: '',
             passwordRules: [
             v => !!v || 'Password required.',
             v => (v && v.length >= 6) || 'Min 6 characters',
