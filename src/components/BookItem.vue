@@ -2,7 +2,7 @@
   <div>
     <v-card :to="'/book/'+ book.slug">
       <v-img
-        :src="getImage('/books/'+book.cover)"
+        :src="getImage('/'+book.cover)"
         class="white--text"
         height="200px"
       >

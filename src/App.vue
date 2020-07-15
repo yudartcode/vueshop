@@ -6,17 +6,18 @@
     -->
     <v-app-bar app color="primary" dark extended v-if="isHome">
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-toolbar-title to="/">{{ appName }}</v-toolbar-title>
+      <v-toolbar-title to="/`">{{ appName }}</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn icon @click="setDialogComponent('cart')">
         <v-badge color="orange" overlap>
-          <template v-slot:badge v-if="countCart>0">
+          <template v-slot:badge v-if="countCart>-1">
             <span>{{ countCart }} </span>
           </template>
           <v-icon>mdi-cart</v-icon>
         </v-badge>
       </v-btn>
       <v-text-field
+        class="mb-5"
         slot="extension" 
         hide-details
         append-icon="mdi-microphone"
@@ -33,7 +34,7 @@
       <v-spacer></v-spacer>
       <v-btn icon @click="setDialogComponent('cart')">
         <v-badge color="orange" overlap>
-          <template v-slot:badge v-if="countCart>0">
+          <template v-slot:badge v-if="countCart>-1">
             <span>{{ countCart }} </span>
           </template>
           <v-icon>mdi-cart</v-icon>
@@ -103,7 +104,7 @@
     </keep-alive>
 
     <!-- Sizes your content based upon application components -->
-    <v-content>
+    <v-main>
 
       <!-- Provides the application the proper gutter -->
       <v-container fluid>
@@ -112,12 +113,12 @@
         <router-view></router-view>
         </v-slide-y-transition>
       </v-container>
-    </v-content>
+    </v-main>
 
     <v-card>
       <v-footer absolute app>
         <v-card-text class="text-center">
-          &copy; {{ new Date().getFullYear() }} — <strong>Vueshop</strong>
+          &copy; {{ new Date().getFullYear() }} — <strong>{{ appName }} Team</strong>
         </v-card-text>
       </v-footer>
     </v-card>
