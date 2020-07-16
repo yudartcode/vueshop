@@ -75,7 +75,7 @@
           :to="item.route"
           v-if="!item.auth || (item.auth && !guest)"
         >
-          <v-icon left>{{ item.icon }}</v-icon>
+          <v-icon left color="secondary">{{ item.icon }}</v-icon>
           <v-list-item-content>
             <v-list-item-title>{{ item.title }}</v-list-item-title>
           </v-list-item-content>
