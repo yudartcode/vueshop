@@ -13,7 +13,7 @@
       <v-layout wrap>
         <v-flex v-for="(category) in categories" :key="`category-`+category.id" xs6>
           <v-card :to="'/category/'+ category.slug">
-            <v-img :src="getImage('/'+category.image)" class="white--text">
+            <v-img :src="category.image" class="white--text">
               <!-- <v-card-title 
                 class="fill-height align-end"
                 v-text="category.name"
