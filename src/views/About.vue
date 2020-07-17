@@ -16,11 +16,11 @@ export default {
   el: 'app',
   data: () => ({
     teams: [
-      { name: 'L Yuda Rahmani Karnaen', avatar: 'https://yudartcode.github.io/img/Yuda-Avatar.jpg', role: 'Fullstack Engineer' },
-      { name: 'Agung Eka Saputra', avatar: 'https://yudartcode.github.io/img/Yuda-Avatar.jpg', role: 'Backend Engineer' },
-      { name: 'Gilang Restu Alam', avatar: 'https://yudartcode.github.io/img/Yuda-Avatar.jpg', role: 'Frontend Engineer' },
-      { name: 'Farasut Widodo Malik', avatar: 'https://yudartcode.github.io/img/Yuda-Avatar.jpg', role: 'Frontend Engineer' },
-      { name: 'Iling Abi Wiraguna', avatar: 'https://yudartcode.github.io/img/Yuda-Avatar.jpg', role: 'Frontend Engineer' },
+      { name: 'L Yuda Rahmani Karnaen', avatar: 'https://yudartcode.github.io/img/Yuda-Avatar.jpg' },
+      { name: 'Agung Eka Saputra', avatar: 'https://yudartcode.github.io/img/Yuda-Avatar.jpg' },
+      { name: 'Gilang Restu Alam', avatar: 'https://yudartcode.github.io/img/Yuda-Avatar.jpg' },
+      { name: 'Farasut Widodo Malik', avatar: 'https://yudartcode.github.io/img/Yuda-Avatar.jpg' },
+      { name: 'Iling Abi Wiraguna', avatar: 'https://yudartcode.github.io/img/Yuda-Avatar.jpg' },
     ]
   })
 };
